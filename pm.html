@@ -297,6 +297,8 @@ body { overflow-x: hidden; background: #07070D; }
 .accent-gold   { --accent: #4F6FC0; --accent-dark: #33459C; --accent-soft: rgba(157,178,228,0.20); --accent-soft2: rgba(157,178,228,0.34); }
 .accent-rose   { --accent: #A8478F; --accent-dark: #7A3170; --accent-soft: rgba(219,166,222,0.20); --accent-soft2: rgba(219,166,222,0.34); }
 
+.accent-coral  { --accent: #C2602A; --accent-dark: #8F4118; --accent-soft: rgba(245,184,150,0.24); --accent-soft2: rgba(245,184,150,0.40); }
+
 .pm-card {
   background: linear-gradient(165deg, var(--accent-soft, transparent) 0%, #fff 60%);
   border: 1px solid #EAEAF5;
@@ -652,7 +654,7 @@ body { overflow-x: hidden; background: #07070D; }
         <div class="pm-metric-label">AWSHacks 2026 placement</div>
       </div>
       <div class="pm-metric">
-        <span class="pm-metric-num">3.7</span>
+        <span class="pm-metric-num">3.75</span>
         <div class="pm-metric-label">GPA at UW Bothell CS</div>
       </div>
     </div>
@@ -662,6 +664,18 @@ body { overflow-x: hidden; background: #07070D; }
       <div class="pm-section-title">What I've shipped</div>
     </div>
     <div class="pm-grid">
+      <div class="pm-card clickable accent-blue" onclick="openProjectModal('rebuild')">
+        <div class="pm-card-tag">IN PROGRESS · CALHACKS</div>
+        <div class="pm-card-title">Rebuild</div>
+        <div class="pm-card-org">Flood Recovery Evidence · CalHacks</div>
+        <div class="pm-card-desc">Helps people after a flood work out what they lost and prove it. An AI agent turns photos and receipts into a first-pass inventory, people review it together, and the result is a record where every item traces back to its evidence.</div>
+      </div>
+      <div class="pm-card clickable accent-coral" onclick="openProjectModal('collabmatch')">
+        <div class="pm-card-tag">HACKATHON · STARTUP IDEA</div>
+        <div class="pm-card-title">CollabMatch</div>
+        <div class="pm-card-org">Creator Marketing for Small Business · DubHacks 2026</div>
+        <div class="pm-card-desc">Co-built in 24 hours to help local businesses hire the right creators for the budget they have. One sentence becomes a campaign brief, ranked matches that are scored on fit instead of followers, and a creator team with invites ready to send.</div>
+      </div>
       <div class="pm-card clickable accent-blue" onclick="openProjectModal('boeing')">
         <div class="pm-card-tag">RISK ANALYST</div>
         <div class="pm-card-title">Boeing NWCC 2025</div>
@@ -1122,6 +1136,247 @@ body { overflow-x: hidden; background: #07070D; }
     </div>
   </div>
 
+  <div class="proj-modal accent-blue" id="projModalRebuild">
+    <div class="proj-modal-header">
+      <button class="proj-modal-close" onclick="closeProjectModal()">&times;</button>
+      <div class="proj-modal-tag">In Progress · CalHacks</div>
+      <div class="proj-modal-title">Rebuild</div>
+      <div class="proj-modal-subtitle">Rebuild helps people after a flood figure out what they lost and prove it. It does the first pass of the inventory, then lets you and others check it together.</div>
+      <div class="proj-modal-meta">
+        <div class="proj-modal-meta-item"><b>Status</b>Building now</div>
+        <div class="proj-modal-meta-item"><b>Event</b>CalHacks</div>
+        <div class="proj-modal-meta-item"><b>Scope</b>One complete path for one room</div>
+      </div>
+    </div>
+
+    <div class="proj-modal-body">
+
+      <div class="proj-section">
+        <div class="proj-section-label">The Problem</div>
+        <div class="proj-section-text">After a flood, people sit down with a pile of phone photos of a wrecked room and a mess of old receipts, and try to build a list for insurance or aid applications. It is slow, stressful, and easy to get wrong at the moment people can least afford mistakes.</div>
+      </div>
+
+      <div class="proj-section">
+        <div class="proj-section-label">The Idea</div>
+        <div class="proj-section-text">Rebuild pulls scattered evidence together, points out what needs clarifying, lets people sort it out together, and ends with a record where every item can be traced back to its evidence. The demo is meant to prove that one idea.</div>
+      </div>
+
+      <div class="proj-section">
+        <div class="proj-section-label">The Flow We Are Building</div>
+        <div class="proj-contrib-list">
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>1. Create a case</b>: for example, "Living room flooded."</div>
+          </div>
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>2. Upload evidence</b>: photos of the room and any receipts.</div>
+          </div>
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>3. Run the agent</b>: it lists the belongings it can see, describes the visible damage and where in the photo to look, reads the receipts, and links a receipt to an item only when there is a specific detail like a brand or model. When something is unclear it flags it or asks, like "Is this the same chair in both photos?" or "When did you buy this?"</div>
+          </div>
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>4. Review together</b>: people check the findings, answer the questions and fix mistakes. Their corrections are stored separately from the AI's guesses, and later runs never overwrite something a person confirmed.</div>
+          </div>
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>5. Export a recovery record</b>: an inventory where every item points back to the photo or receipt that supports it.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-section">
+        <div class="proj-section-label">Key Product Decisions</div>
+        <div class="proj-contrib-list">
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>People stay in charge</b>: human corrections are saved separately from AI guesses, and a confirmed answer is never overwritten by a later run. The AI proposes, people decide.</div>
+          </div>
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>Only link what the evidence supports</b>: a receipt attaches to an item only with a specific detail like a brand or model, and unclear cases become questions instead of guesses.</div>
+          </div>
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>Everything traces back</b>: every inventory item points to the photo or receipt behind it, so the record is something a person can defend.</div>
+          </div>
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>Deliberately out of scope</b>: shopping for replacements, analyzing insurance coverage and submitting claims automatically were left out so one path works end to end.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-section">
+        <div class="proj-section-label">How The Pieces Fit</div>
+        <div class="proj-section-text">Each piece has a different owner: a React frontend that shows the evidence and captures review actions, a FastAPI backend that handles uploads, calls the agent, validates the result and runs the export, the CREAO agent that investigates and reconciles the evidence, and SpacetimeDB, which stores the shared case so everyone sees changes live.</div>
+        <div class="proj-arch-flow">
+          <div class="proj-arch-tier">Photos and receipts</div>
+          <span class="proj-arch-arrow">→</span>
+          <div class="proj-arch-tier">CREAO agent: items, damage, questions</div>
+          <span class="proj-arch-arrow">→</span>
+          <div class="proj-arch-tier">Shared review in real time</div>
+          <span class="proj-arch-arrow">→</span>
+          <div class="proj-arch-tier">Evidence-linked recovery record</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="proj-modal accent-coral" id="projModalCollabmatch">
+    <div class="proj-modal-header">
+      <button class="proj-modal-close" onclick="closeProjectModal()">&times;</button>
+      <div class="proj-modal-tag">Product &amp; Frontend Lead · DubHacks 2026</div>
+      <div class="proj-modal-title">CollabMatch</div>
+      <div class="proj-modal-subtitle">"The right creators. The right audience. The right budget." A two-sided web app that matches small local businesses with local micro-creators and recommends the best team of creators that fits the business's budget.</div>
+      <div class="proj-modal-meta">
+        <div class="proj-modal-meta-item"><b>Role</b>Product, frontend and pitch lead</div>
+        <div class="proj-modal-meta-item"><b>Duration</b>24 hours · DubHacks 2026</div>
+        <div class="proj-modal-meta-item"><b>Team</b>2 students</div>
+        <div class="proj-modal-meta-item"><b>Model</b>Free for creators, $0 / $29 for businesses</div>
+      </div>
+      <a href="https://www.collabmatch.biz/" target="_blank" rel="noopener" class="proj-modal-link">Visit the Live Site →</a>
+      <a href="https://github.com/anushkaboran/collabmatch" target="_blank" rel="noopener" class="proj-modal-link">View Repo on GitHub →</a>
+    </div>
+
+    <div class="proj-modal-body">
+
+      <div class="proj-section">
+        <div class="proj-section-label">The Problem</div>
+        <div class="proj-section-text">Small businesses want to work with local creators but do not know who to pick, what a fair price is, or how to split a small budget. Creators with small but relevant local audiences struggle to get any brand deals. Follower count does not tell a café whether a creator's audience is its customer, and manual outreach takes hours.</div>
+      </div>
+
+      <div class="proj-section">
+        <div class="proj-section-label">Who It Is For</div>
+        <div class="proj-section-text"><b>Small businesses (the paying customer):</b> independent cafés, restaurants, boutiques, yoga studios and beauty shops with roughly $100 to $500 to spend and no marketing team. <b>Micro-creators (free):</b> creators with roughly 1.5K to 40K followers, often students, posting about food, local spots, fitness, fashion or beauty. <b>Starting market:</b> Seattle cafés and food spots around the U District and Capitol Hill, then expand neighborhood by neighborhood and category by category.</div>
+      </div>
+
+      <div class="proj-section">
+        <div class="proj-section-label">What It Does</div>
+        <div class="proj-section-text">The whole product is one loop. A café owner types one sentence, like "$300 to promote my new matcha drink to college students in Seattle." AI turns it into a campaign brief, a transparent scoring engine ranks creators with reasons, an optimizer picks the best combination of creators within budget, and the business invites them in one tap with AI-written messages. Creators join with "Continue with Instagram", get a verified profile built from their real posts, and accept, decline or counter the fee. Both sides track the collaboration to completion.
+        <div class="proj-stat-row">
+          <div class="proj-stat"><span class="proj-stat-num">24 hrs</span><div class="proj-stat-label">From idea to a working product</div></div>
+          <div class="proj-stat"><span class="proj-stat-num">7</span><div class="proj-stat-label">Weighted factors in every fit score</div></div>
+          <div class="proj-stat"><span class="proj-stat-num">1 to 4</span><div class="proj-stat-label">Creators per team, every affordable combination checked</div></div>
+          <div class="proj-stat"><span class="proj-stat-num">$0</span><div class="proj-stat-label">Always free for creators</div></div>
+        </div></div>
+      </div>
+
+      <div class="proj-section">
+        <div class="proj-section-label">My Role and Contributions</div>
+        <div class="proj-contrib-list">
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>Wrote the full project specification</b>: a 39-page spec that captured every decision: users, flows, scoring formula, optimizer, data model, API contract, design system, business model, tracks and risks, so either teammate could pick up the full context.</div>
+          </div>
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>Designed every screen judges and users see</b>: business home, results page with budget slider and editable chips, team panel with plan options, invite tracker with counteroffers, the creator join, consent and offers screens, and a phone-first invite-link page.</div>
+          </div>
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>Built the frontend</b>: Next.js, React and Tailwind screens, built on a typed API layer with a mock mode so the UI never waited on the backend. Rule for every screen: if the engine computed it (a score, a reason, a total, a verified badge), show it.</div>
+          </div>
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>Shaped the design through user feedback</b>: a colorful, low-text, few-click UI with real photos across three design rounds, and a "Quick parse" vs "Generated by Gemini" badge so the AI source is always visible.</div>
+          </div>
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>Owned the startup story</b>: pitch, competitor research, business model, demo script, and the strategy for which hackathon tracks to enter and why.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-section">
+        <div class="proj-section-label">Key Product Decisions</div>
+        <div class="proj-contrib-list">
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>The flagship is a budget optimizer, not a directory</b>: the rule for the build was not to make an influencer directory with a chatbot attached. The value is the working pipeline: campaign, explainable matching, budget-optimized team, invitation, acceptance.</div>
+          </div>
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>Scores come from a formula, not the AI</b>: explainable, testable and free of invented numbers. Gemini only extracts structure and writes messages.</div>
+          </div>
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>Follower count is not a scoring factor</b>: small creators should win on fit. This came from a mentor, and it is the heart of the matching design.</div>
+          </div>
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>Creators sign up with Instagram</b>: mentor feedback led us to verified data and content-based matching, so even tiny creators get matched on what they post.</div>
+          </div>
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>Businesses can invite creators from social media</b>: a personal invite link solves the cold start, and every invite grows the supply side. No scraping and no automated DMs, because both break platform terms.</div>
+          </div>
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>A single-creator result is valid</b>: the optimizer is about the best use of the budget, whether that is one creator or four, and the UI shows the leftover budget.</div>
+          </div>
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>Synthetic data, clearly labeled</b>: real Instagram APIs need app review, so the prototype uses seeded creators and says so in the footer.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-section">
+        <div class="proj-section-label">How Fit Is Scored</div>
+        <div class="proj-section-text">Every creator gets a 0 to 100 fit score from a weighted formula, and every factor comes with an evidence line the owner can read, like "Reaches college students, young professionals." Creators who cannot work for the campaign are shown under "Not a fit" with a reason, such as fully booked, over budget or outside the city, instead of being hidden.</div>
+        <div class="proj-team-row" style="margin-top:12px">
+          <span class="proj-team-chip">Audience 25%</span>
+          <span class="proj-team-chip">Content niche 20%</span>
+          <span class="proj-team-chip">Location 15%</span>
+          <span class="proj-team-chip">Budget fit 15%</span>
+          <span class="proj-team-chip">Content style 10%</span>
+          <span class="proj-team-chip">Engagement 10%</span>
+          <span class="proj-team-chip">Platform 5%</span>
+          
+        </div>
+      </div>
+
+      <div class="proj-section">
+        <div class="proj-section-label">The Optimizer, and How We Fixed It</div>
+        <div class="proj-section-text">The optimizer checks every affordable team of 1 to 4 creators and picks the one with the most useful fit, while penalizing teams whose audiences overlap. For the demo, a $300 matcha campaign returns three creators who cover three neighborhoods for exactly $300. <b>Iteration:</b> the first version summed raw scores and picked four weak, cheap creators. We changed it so only fit above a floor of 55 counts, and tuned the overlap penalty, which produced the right team. Reach is always labeled an estimate, never a fact.</div>
+        <div class="proj-arch-flow">
+          <div class="proj-arch-tier">One sentence from the business</div>
+          <span class="proj-arch-arrow">→</span>
+          <div class="proj-arch-tier">AI brief, then ranked matches</div>
+          <span class="proj-arch-arrow">→</span>
+          <div class="proj-arch-tier">Budget-optimized team</div>
+          <span class="proj-arch-arrow">→</span>
+          <div class="proj-arch-tier">Invites, counteroffers, tracking</div>
+        </div>
+      </div>
+
+      <div class="proj-section">
+        <div class="proj-section-label">Business Model and Competition</div>
+        <div class="proj-section-text"><b>Phase 1:</b> freemium. Starter is $0 for one active campaign. Business Pro is about $29 a month for unlimited campaigns, the full optimizer, AI proposals and tracking. <b>Phase 2:</b> about 10% of each completed paid collaboration, with escrow. <b>Later:</b> creator add-ons and partnerships with neighborhood business associations. All prices are hypothetical and meant to be tested.</div>
+        <div class="proj-section-text" style="margin-top:12px"><b>Competitors:</b> enterprise platforms such as Upfluence, Aspire, Grin and CreatorIQ cost roughly $2,000 to $5,000 a month. Collabstr, the closest marketplace, has a free plan with a 10% hiring fee and Pro at $249 a month, but you still pick creators yourself. Small-business tools like Social Cat and Stack Influence aim at e-commerce sellers. <b>Our difference:</b> we build a team, not a search result, every score is explainable, the brief is one sentence, and it is priced for a $300 campaign.</div>
+      </div>
+
+      <div class="proj-section">
+        <div class="proj-section-label">Risks and Scope Calls</div>
+        <div class="proj-section-text">We planned fallbacks for every failure point: a keyword parser if the AI is slow, an in-memory store if the database is down, and a sample connected profile if Instagram login is not approved. If we ran out of time, the cut list was the dashboard list, the widest-reach plan, TikTok and counteroffers. The two things we never cut were the optimizer and the accept flow.</div>
+      </div>
+
+      <div class="proj-section">
+        <div class="proj-section-label">Team and Mentors</div>
+        <div class="proj-team-row">
+          <span class="proj-team-chip">Anushka Boran · Product, frontend, pitch</span>
+          <span class="proj-team-chip">Sanaa Rahmat · Backend, data, AI</span>
+        </div>
+        <div class="proj-section-text" style="margin-top:12px">Mentors who shaped the product: Prateek Tiwari, Venkat Prabhu and Shobhit Singh.</div>
+      </div>
+
+    </div>
+  </div>
+
   <div class="proj-modal accent-rose" id="projModalForget">
     <div class="proj-modal-header">
       <button class="proj-modal-close" onclick="closeProjectModal()">&times;</button>
@@ -1230,7 +1485,7 @@ document.addEventListener('keydown', function(e) {
     },
     currently: {
       q: "What are you working on?",
-      a: "Right now I'm building the backend and Entra ID authentication for VeraHR, an enterprise HR agent, at my internship. Outside of that I'm working on EdgeSentinel (a security monitoring tool I built) and an agentic AI pipeline I use to actually measure whether agents do what they claim. And this portfolio, which I'm still tweaking more than I'd like to admit."
+      a: "Right now I'm at CalHacks building Rebuild, a tool that helps people after a flood figure out what they lost and prove it. An AI agent turns their photos and receipts into a first-pass inventory, and people review it together. Before this I built the backend and Entra ID authentication for VeraHR, an enterprise HR agent, at my internship, and I've wrapped that up for now. Outside of that I'm working on EdgeSentinel (a security monitoring tool I built) and an agentic AI pipeline I use to actually measure whether agents do what they claim. And this portfolio, which I'm still tweaking more than I'd like to admit."
     },
     work: {
       q: "How do you work?",
