@@ -665,10 +665,10 @@ body { overflow-x: hidden; background: #07070D; }
     </div>
     <div class="pm-grid">
       <div class="pm-card clickable accent-blue" onclick="openProjectModal('rebuild')">
-        <div class="pm-card-tag">IN PROGRESS · CALHACKS</div>
+        <div class="pm-card-tag">HACKATHON · CALHACKS</div>
         <div class="pm-card-title">Rebuild</div>
-        <div class="pm-card-org">Flood Recovery Evidence · CalHacks</div>
-        <div class="pm-card-desc">Helps people after a flood work out what they lost and prove it. An AI agent turns photos and receipts into a first-pass inventory, people review it together, and the result is a record where every item traces back to its evidence.</div>
+        <div class="pm-card-org">Home Damage Recovery · AI Agents · CalHacks</div>
+        <div class="pm-card-desc">Built in 24 hours with a team of four. After a leak, storm, flood or fire, Rebuild turns photos and receipts into a recovery record where every item traces back to its evidence. I built the AI agents that find items, flag what is unclear and never invent a fact.</div>
       </div>
       <div class="pm-card clickable accent-coral" onclick="openProjectModal('collabmatch')">
         <div class="pm-card-tag">HACKATHON · STARTUP IDEA</div>
@@ -1139,50 +1139,66 @@ body { overflow-x: hidden; background: #07070D; }
   <div class="proj-modal accent-blue" id="projModalRebuild">
     <div class="proj-modal-header">
       <button class="proj-modal-close" onclick="closeProjectModal()">&times;</button>
-      <div class="proj-modal-tag">In Progress · CalHacks</div>
+      <div class="proj-modal-tag">AI Agent Builder · CalHacks</div>
       <div class="proj-modal-title">Rebuild</div>
-      <div class="proj-modal-subtitle">Rebuild helps people after a flood figure out what they lost and prove it. It does the first pass of the inventory, then lets you and others check it together.</div>
+      <div class="proj-modal-subtitle">When your home is damaged by a leak, storm, flood or fire, Rebuild turns your photos and receipts into a provable recovery record. AI finds what you lost, your household confirms it together, and the claim email is drafted for you.</div>
       <div class="proj-modal-meta">
-        <div class="proj-modal-meta-item"><b>Status</b>Building now</div>
-        <div class="proj-modal-meta-item"><b>Event</b>CalHacks</div>
-        <div class="proj-modal-meta-item"><b>Scope</b>One complete path for one room</div>
+        <div class="proj-modal-meta-item"><b>Role</b>Built the AI agents on CREAO</div>
+        <div class="proj-modal-meta-item"><b>Duration</b>24 hours · CalHacks</div>
+        <div class="proj-modal-meta-item"><b>Team</b>4 builders</div>
       </div>
+      <a href="https://rebuild-delta.vercel.app/" target="_blank" rel="noopener" class="proj-modal-link">Try It Live →</a>
+      <a href="https://github.com/anushkaboran/rebuild" target="_blank" rel="noopener" class="proj-modal-link">View Repo on GitHub →</a>
     </div>
 
     <div class="proj-modal-body">
 
       <div class="proj-section">
         <div class="proj-section-label">The Problem</div>
-        <div class="proj-section-text">After a flood, people sit down with a pile of phone photos of a wrecked room and a mess of old receipts, and try to build a list for insurance or aid applications. It is slow, stressful, and easy to get wrong at the moment people can least afford mistakes.</div>
+        <div class="proj-section-text">After a leak, storm, flood or fire, the first disaster is the damage. The second starts when the insurer asks for a list of everything you lost, with proof. People have a camera roll of panicked photos, receipts that are soaked or lost, and no idea what they paid for a lamp three years ago. They build spreadsheets by hand, nearly list the same chair twice, guess prices they worry will get a claim denied, and end up with lists that do not match what a roommate wrote. It takes days, at the worst moment of someone's life.</div>
       </div>
 
       <div class="proj-section">
-        <div class="proj-section-label">The Idea</div>
-        <div class="proj-section-text">Rebuild pulls scattered evidence together, points out what needs clarifying, lets people sort it out together, and ends with a record where every item can be traced back to its evidence. The demo is meant to prove that one idea.</div>
+        <div class="proj-section-label">What It Does</div>
+        <div class="proj-section-text">Rebuild pulls scattered evidence together, points out what needs clarifying, lets people sort it out together, and ends with a record where every item can be traced back to its evidence.
+        <div class="proj-stat-row">
+          <div class="proj-stat"><span class="proj-stat-num">24 hrs</span><div class="proj-stat-label">From idea to a working product</div></div>
+          <div class="proj-stat"><span class="proj-stat-num">3</span><div class="proj-stat-label">AI agents: investigate, research, draft</div></div>
+          <div class="proj-stat"><span class="proj-stat-num">4</span><div class="proj-stat-label">Builders on the team</div></div>
+          <div class="proj-stat"><span class="proj-stat-num">Live</span><div class="proj-stat-label">Shared case that updates for everyone</div></div>
+        </div></div>
       </div>
 
       <div class="proj-section">
-        <div class="proj-section-label">The Flow We Are Building</div>
+        <div class="proj-section-label">How The Flow Works</div>
         <div class="proj-contrib-list">
           <div class="proj-contrib-item">
             <div class="proj-contrib-icon">✓</div>
-            <div class="proj-contrib-text"><b>1. Create a case</b>: for example, "Living room flooded."</div>
+            <div class="proj-contrib-text"><b>Create a case and upload evidence</b>: photos of the damaged room and any receipts.</div>
           </div>
           <div class="proj-contrib-item">
             <div class="proj-contrib-icon">✓</div>
-            <div class="proj-contrib-text"><b>2. Upload evidence</b>: photos of the room and any receipts.</div>
+            <div class="proj-contrib-text"><b>The Evidence Investigator reads everything</b>: it lists each belonging it can see, describes the visible damage, says where in the photo to look, and reads the receipts.</div>
           </div>
           <div class="proj-contrib-item">
             <div class="proj-contrib-icon">✓</div>
-            <div class="proj-contrib-text"><b>3. Run the agent</b>: it lists the belongings it can see, describes the visible damage and where in the photo to look, reads the receipts, and links a receipt to an item only when there is a specific detail like a brand or model. When something is unclear it flags it or asks, like "Is this the same chair in both photos?" or "When did you buy this?"</div>
+            <div class="proj-contrib-text"><b>It flags what is unclear</b>: it links a receipt to an item only when there is a specific detail like a brand or model, and asks a question otherwise, like "Is this the same chair in both photos?"</div>
           </div>
           <div class="proj-contrib-item">
             <div class="proj-contrib-icon">✓</div>
-            <div class="proj-contrib-text"><b>4. Review together</b>: people check the findings, answer the questions and fix mistakes. Their corrections are stored separately from the AI's guesses, and later runs never overwrite something a person confirmed.</div>
+            <div class="proj-contrib-text"><b>People review together</b>: household members and helpers confirm or correct findings, and every change shows up live for everyone on the case.</div>
           </div>
           <div class="proj-contrib-item">
             <div class="proj-contrib-icon">✓</div>
-            <div class="proj-contrib-text"><b>5. Export a recovery record</b>: an inventory where every item points back to the photo or receipt that supports it.</div>
+            <div class="proj-contrib-text"><b>Re-runs respect people</b>: follow-up runs keep every ID and every confirmed fact, and closed questions stay visible as resolved, with the reason.</div>
+          </div>
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>Suggest products, clearly labeled</b>: a Product Researcher suggests up to three possible matches from the web, always marked unverified.</div>
+          </div>
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>Export and draft the claim email</b>: a recovery record PDF where every line traces back to its evidence, and a Claim Submission Assistant that drafts the insurer email with the PDF attached. It only drafts. Sending needs a separate explicit approval.</div>
           </div>
         </div>
       </div>
@@ -1192,35 +1208,53 @@ body { overflow-x: hidden; background: #07070D; }
         <div class="proj-contrib-list">
           <div class="proj-contrib-item">
             <div class="proj-contrib-icon">✓</div>
-            <div class="proj-contrib-text"><b>People stay in charge</b>: human corrections are saved separately from AI guesses, and a confirmed answer is never overwritten by a later run. The AI proposes, people decide.</div>
+            <div class="proj-contrib-text"><b>No invented facts</b>: missing brands, dates and prices stay blank and become questions. A single made-up number can put a whole claim in doubt.</div>
           </div>
           <div class="proj-contrib-item">
             <div class="proj-contrib-icon">✓</div>
-            <div class="proj-contrib-text"><b>Only link what the evidence supports</b>: a receipt attaches to an item only with a specific detail like a brand or model, and unclear cases become questions instead of guesses.</div>
+            <div class="proj-contrib-text"><b>A generic receipt is not proof</b>: a receipt that says "lamp" is not matched to just any lamp in the photo. The agent asks instead of guessing, and receipt prices are never assigned to an item without a person confirming the match.</div>
           </div>
           <div class="proj-contrib-item">
             <div class="proj-contrib-icon">✓</div>
-            <div class="proj-contrib-text"><b>Everything traces back</b>: every inventory item points to the photo or receipt behind it, so the record is something a person can defend.</div>
+            <div class="proj-contrib-text"><b>AI proposals and human confirmations are always distinguishable</b>: people's corrections are stored separately from the agent's guesses and never overwritten.</div>
           </div>
           <div class="proj-contrib-item">
             <div class="proj-contrib-icon">✓</div>
-            <div class="proj-contrib-text"><b>Deliberately out of scope</b>: shopping for replacements, analyzing insurance coverage and submitting claims automatically were left out so one path works end to end.</div>
+            <div class="proj-contrib-text"><b>Drafting is not sending</b>: the email assistant never sends on its own. It was tested end to end with a team test inbox only.</div>
+          </div>
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>Private evidence stays private</b>: real damage photos never go into a public repo, and credentials stay out of code and agent output.</div>
+          </div>
+          <div class="proj-contrib-item">
+            <div class="proj-contrib-icon">✓</div>
+            <div class="proj-contrib-text"><b>Scope on purpose</b>: one complete path that works end to end, with signed-URL uploads, answering questions inside the case, cross-run duplicate detection and whole-home cases as the next steps.</div>
           </div>
         </div>
       </div>
 
       <div class="proj-section">
         <div class="proj-section-label">How The Pieces Fit</div>
-        <div class="proj-section-text">Each piece has a different owner: a React frontend that shows the evidence and captures review actions, a FastAPI backend that handles uploads, calls the agent, validates the result and runs the export, the CREAO agent that investigates and reconciles the evidence, and SpacetimeDB, which stores the shared case so everyone sees changes live.</div>
+        <div class="proj-section-text">We agreed on a shared data contract first, which let four people build the frontend, backend and agents in parallel. CREAO runs the agents, SpacetimeDB keeps the case live for everyone, a FastAPI backend handles uploads, validation, PDF export and the approved-send step, and a React interface shows the evidence and captures review.</div>
         <div class="proj-arch-flow">
           <div class="proj-arch-tier">Photos and receipts</div>
           <span class="proj-arch-arrow">→</span>
-          <div class="proj-arch-tier">CREAO agent: items, damage, questions</div>
+          <div class="proj-arch-tier">CREAO agents: items, questions</div>
           <span class="proj-arch-arrow">→</span>
-          <div class="proj-arch-tier">Shared review in real time</div>
+          <div class="proj-arch-tier">Shared review in SpacetimeDB</div>
           <span class="proj-arch-arrow">→</span>
-          <div class="proj-arch-tier">Evidence-linked recovery record</div>
+          <div class="proj-arch-tier">Evidence-linked record + claim draft</div>
         </div>
+      </div>
+
+      <div class="proj-section">
+        <div class="proj-section-label">Challenge and Lesson</div>
+        <div class="proj-section-text">Making a follow-up AI run trustworthy was the hardest part: preserving IDs, never contradicting what a person confirmed, and keeping resolved findings instead of silently dropping them. Early on we caught the agent analyzing the wrong photo, which led to strict evidence IDs and filename checks. The lesson: teaching AI when not to guess matters as much as teaching it what to find.</div>
+      </div>
+
+      <div class="proj-section">
+        <div class="proj-section-label">Team</div>
+        <div class="proj-section-text">Built by a team of four at CalHacks. I built the AI agents on CREAO and worked with teammates to connect them to the React frontend, FastAPI backend and SpacetimeDB.</div>
       </div>
 
     </div>
@@ -1485,7 +1519,7 @@ document.addEventListener('keydown', function(e) {
     },
     currently: {
       q: "What are you working on?",
-      a: "Right now I'm at CalHacks building Rebuild, a tool that helps people after a flood figure out what they lost and prove it. An AI agent turns their photos and receipts into a first-pass inventory, and people review it together. Before this I built the backend and Entra ID authentication for VeraHR, an enterprise HR agent, at my internship, and I've wrapped that up for now. Outside of that I'm working on EdgeSentinel (a security monitoring tool I built) and an agentic AI pipeline I use to actually measure whether agents do what they claim. And this portfolio, which I'm still tweaking more than I'd like to admit."
+      a: "I just wrapped up CalHacks, where my team built Rebuild in 24 hours, a tool that helps people prove what they lost after home damage like a flood or a leak. I built the AI agent that reads the photos and receipts and is taught not to guess. Before that I built the backend and Entra ID authentication for VeraHR, an enterprise HR agent, at my internship, and I've wrapped that up for now. Outside of that I'm working on an agentic AI pipeline I use to actually measure whether agents do what they claim. And this portfolio, which I'm still tweaking more than I'd like to admit."
     },
     work: {
       q: "How do you work?",
